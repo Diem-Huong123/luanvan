@@ -31,6 +31,9 @@ public class SinhVienController {
         return sinhVienService.getSinhVienByMaSinhVien(maSinhVien);
     }
 
+
+
+    //xóa tt sinh vien
     @DeleteMapping("/{maSinhVien}")
     public void deleteSinhVien(@PathVariable String maSinhVien) {
         sinhVienService.deleteSinhVien(maSinhVien);

@@ -5,6 +5,8 @@ import com.example.login.model.SinhVien;
 import com.example.login.reponsitory.KeHoachHocTapRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +39,16 @@ public class KeHoachHocTapService {
 
     public void addKeHoachHocTap(KeHoachHocTap keHoach) {
         keHoachHocTapRepository.save(keHoach);
+    }
+
+
+    // Lấy kế hoạch học tập theo Mã Sinh Viên
+    public List<KeHoachHocTap> getKeHoachByMaSinhVien(String maSinhVien) {
+        return keHoachHocTapRepository.findBySinhVien_MaSinhVien(maSinhVien);
+    }
+
+    public List<KeHoachHocTap> getKeHoachBySinhVienAndHocKy(String maSinhVien, String maHocKy) {
+        return keHoachHocTapRepository.findBySinhVien_MaSinhVienAndHocKy_MaHocKy(maSinhVien, maHocKy);
     }
 
 

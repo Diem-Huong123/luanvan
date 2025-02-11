@@ -71,4 +71,11 @@ public class UserController {
     public void deleteUser(@PathVariable String username) {
         userService.deleteUser(username);
     }
+
+    //cập  nhật thông tin theo username (cập nhật password)
+    @PutMapping("/{username}")
+    public User updateUser(@PathVariable String username, @RequestBody User updatedUser) {
+        return userService.updateUser(username, updatedUser);
+    }
+
 }
