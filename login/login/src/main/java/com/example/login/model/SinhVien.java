@@ -1,8 +1,13 @@
 package com.example.login.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import java.util.Set;
+
+import com.example.login.model.B2110947.DangKyHocPhan;
+import com.example.login.model.B2110947.NhomHoc;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.*;
 
 @Entity
 public class SinhVien {
@@ -25,7 +30,7 @@ public class SinhVien {
     @Column(nullable = false, length = 10)
     private String gioiTinh; // Giới tính (Nam/Nữ)
 
-    //getter and setter
+    // getter and setter
     public String getMaSinhVien() {
         return maSinhVien;
     }
@@ -73,5 +78,12 @@ public class SinhVien {
     public void setGioiTinh(String gioiTinh) {
         this.gioiTinh = gioiTinh;
     }
-}
 
+    // B2110947 insert
+    @OneToMany(mappedBy = "sinhVien", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference("sinhvien-dangkyhocphan")
+    @JsonIgnore
+    private Set<DangKyHocPhan> dangKyHocPhan;
+
+    // ===============
+}
