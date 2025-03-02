@@ -1,0 +1,106 @@
+body {
+  background-color: white;
+}
+
+.part-two {
+  background-color: #0d1b2a;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.container-part-two {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.why-us p {
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid;
+  padding: 20px;
+}
+
+.part-two-nav {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.part-two-nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.part-two-nav button.active::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.part-two-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.image-section img {
+  width: 400px;
+  border-radius: 8px;
+}
+
+.text-section {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.text-section h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.text-section p {
+  font-size: 16px;
+}
+
+.why-us {
+  display: flex;
+  justify-content: center;
+}
+
+.part-two-content-sub-content {
+  text-align: justify;
+  padding-left: 28px;
+}   
+
+.part-two-nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+  }
+  
+  .part-two-nav button.active {
+    color: orange;
+    font-weight: bold;
+  }
